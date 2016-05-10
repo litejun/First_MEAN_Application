@@ -14,8 +14,14 @@
 		<div class="row">
 			<h1 class="col-sm-8">굿모닝마이푸드</h1>
 			<nav class="col-sm-4">
-				<p>로그인</p>
-				<p>후기게시판</p>
+				<% if (userFullName) { %>
+					<p>Hello <%=userFullName%></p>
+					<p><a href="/signout">Signout</a></p>
+				<% } else { %>
+					<p><a href="/signup">회원가입</a></p>
+					<p><a href="/signin">로그인</a></p>
+					<p>후기게시판</p>
+				<% } %>
 			</nav>
 		</div>
 	</header>
